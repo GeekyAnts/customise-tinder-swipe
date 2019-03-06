@@ -16,6 +16,9 @@ class GestureCardDeck extends StatefulWidget {
   final Widget leftSwipeBanner;
   final Widget rightSwipeBanner;
   final bool showAsDeck;
+  final bool isButtonFixed;
+  final Offset fixedButtonPosition;
+  final bool showDiagoinaly;
 
   const GestureCardDeck({
     Key key,
@@ -28,6 +31,9 @@ class GestureCardDeck extends StatefulWidget {
     this.leftSwipeBanner,
     this.rightSwipeBanner,
     this.showAsDeck = true,
+    this.isButtonFixed = false,
+    this.fixedButtonPosition,
+    this.showDiagoinaly = false,
     @required this.onCardTap,
     @required this.data,
     @required this.onSwipeRight,
@@ -86,6 +92,7 @@ class GestureCardDeckState extends State<GestureCardDeck>
   Widget build(BuildContext context) {
     String key = Random().nextDouble().toString();
     double backCardPosition = widget.topPosition;
+    double backCardLeftPosition = widget.leftPosition;
     double backCardWidth = -10.0;
     return new Stack(
       key: Key(key),
@@ -93,7 +100,10 @@ class GestureCardDeckState extends State<GestureCardDeck>
       children: showData.reversed.map((item) {
         if (showData.indexOf(item) == 0) {
           return CurrentDeckCard(
-            initialPosition: Offset(widget.leftPosition,
+            initialPosition: Offset(
+                widget.showDiagoinaly
+                    ? widget.leftPosition + showData.length * 10
+                    : widget.leftPosition,
                 widget.showAsDeck ? backCardPosition + 10 : backCardPosition),
             singleData: item,
             cardWidth: backCardWidth + 10,
@@ -107,21 +117,31 @@ class GestureCardDeckState extends State<GestureCardDeck>
             rightSwipeButton: widget.rightSwipeButton,
             leftSwipeBanner: widget.leftSwipeBanner,
             rightSwipeBanner: widget.rightSwipeBanner,
+            fixedButtonPosition: widget.fixedButtonPosition,
+            isButtonFixed: widget.isButtonFixed,
           );
         } else {
-          if (widget.showAsDeck) backCardPosition = backCardPosition + 10;
-          return CurrentDeckCard(
-            isActive: false,
-            initialPosition: Offset(widget.leftPosition, backCardPosition),
-            singleData: item,
-            cardWidth: backCardWidth,
-            context: context,
-            onGestureSwipeLeft: onGestureSwipeLeft,
-            onGestureSwipeRight: onGestureSwipeRight,
-            onCardTap: widget.onCardTap,
-            leftSwipeButton: widget.leftSwipeButton,
-            rightSwipeButton: widget.rightSwipeButton,
-          );
+          if (widget.showAsDeck) {
+            backCardPosition = backCardPosition + 10;
+            if (widget.showDiagoinaly)
+              backCardLeftPosition = backCardLeftPosition + 10;
+          }
+          if (widget.showAsDeck)
+            //  backCardLeftPosition = backCardLeftPosition + 10;
+            return CurrentDeckCard(
+              isActive: false,
+              fixedButtonPosition: widget.fixedButtonPosition,
+              initialPosition: Offset(backCardLeftPosition, backCardPosition),
+              singleData: item,
+              cardWidth: backCardWidth,
+              context: context,
+              onGestureSwipeLeft: onGestureSwipeLeft,
+              onGestureSwipeRight: onGestureSwipeRight,
+              onCardTap: widget.onCardTap,
+              leftSwipeButton: widget.leftSwipeButton,
+              rightSwipeButton: widget.rightSwipeButton,
+              isButtonFixed: widget.isButtonFixed,
+            );
         }
       }).toList(),
     );

@@ -16,6 +16,8 @@ class CurrentDeckCard extends StatelessWidget {
   final Widget rightSwipeButton;
   final Widget leftSwipeBanner;
   final Widget rightSwipeBanner;
+  final bool isButtonFixed;
+  final Offset fixedButtonPosition;
   CurrentDeckCard({
     this.isActive = true,
     this.singleData,
@@ -31,6 +33,8 @@ class CurrentDeckCard extends StatelessWidget {
     this.rightSwipeButton,
     this.leftSwipeBanner,
     this.rightSwipeBanner,
+    this.fixedButtonPosition,
+    this.isButtonFixed,
   });
 
   @override
@@ -44,6 +48,8 @@ class CurrentDeckCard extends StatelessWidget {
       rightSwipeButton: rightSwipeButton,
       leftSwipeBanner: leftSwipeBanner,
       rightSwipeBanner: rightSwipeBanner,
+      fixedButtonPosition: fixedButtonPosition,
+      isButtonFixed: isButtonFixed,
       swipeLeft: () {
         onGestureSwipeLeft();
       },
