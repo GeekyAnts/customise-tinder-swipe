@@ -14,11 +14,12 @@ class GestureCard extends StatefulWidget {
   final Duration animationTime;
   final isButtonFixed;
   final fixedButtonPosition;
+  final Function onTap;
 
   GestureCard({
     Key key,
-    this.isActive = true,
-    this.isButtonFixed = true,
+    this.isActive,
+    this.isButtonFixed,
     this.initialPosition,
     this.leftSwipeButton,
     this.rightSwipeButton,
@@ -27,6 +28,7 @@ class GestureCard extends StatefulWidget {
     this.leftSwipeBanner,
     this.rightSwipeBanner,
     this.fixedButtonPosition,
+    this.onTap,
     @required this.swipeRight,
     @required this.swipeLeft,
     @required this.child,
@@ -143,6 +145,9 @@ class GestureCardState extends State<GestureCard>
             top: top,
             left: left,
             child: GestureDetector(
+              onTap: () {
+                widget.onTap();
+              },
               onPanStart: (DragStartDetails details) {
                 if (widget.isActive)
                   currentOffset = Offset(

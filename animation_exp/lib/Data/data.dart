@@ -1,4 +1,4 @@
-import 'package:animation_exp/SwipeAnimation/styles.dart';
+import 'package:animation_exp/Data/styles.dart';
 
 List imageData = [
   image1,

@@ -100,6 +100,7 @@ class GestureCardDeckState extends State<GestureCardDeck>
       children: showData.reversed.map((item) {
         if (showData.indexOf(item) == 0) {
           return CurrentDeckCard(
+            isActive: true,
             initialPosition: Offset(
                 widget.showDiagoinaly
                     ? widget.leftPosition + showData.length * 10

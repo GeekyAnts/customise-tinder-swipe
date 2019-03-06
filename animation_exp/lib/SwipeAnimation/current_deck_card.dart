@@ -50,25 +50,18 @@ class CurrentDeckCard extends StatelessWidget {
       rightSwipeBanner: rightSwipeBanner,
       fixedButtonPosition: fixedButtonPosition,
       isButtonFixed: isButtonFixed,
+      onTap: onCardTap,
       swipeLeft: () {
         onGestureSwipeLeft();
       },
       swipeRight: () {
         onGestureSwipeRight();
       },
-      child: new Hero(
-        tag: "singleData",
-        child: new GestureDetector(
-          onTap: () {
-            onCardTap();
-          },
-          child: Center(
-            child: new Card(
-              color: Colors.transparent,
-              child: Container(child: singleData),
-              elevation: 4.0,
-            ),
-          ),
+      child: Center(
+        child: new Card(
+          color: Colors.transparent,
+          child: Container(child: singleData),
+          elevation: 4.0,
         ),
       ),
     );
