@@ -1,6 +1,6 @@
 # Swipe Card Flutter
 
-Freely Movable,Swipable Cards with fully customizable UI and left and right and on tab call backs.
+Freely Movable,Swipable Cards with fully customizable UI and leftSwipe,rightSwipe and onTap call backs.
 
 # Demo
 ![Demo](https://github.com/rajajain08/readme_data/blob/master/swipe_cards_flutter/1.gif)
