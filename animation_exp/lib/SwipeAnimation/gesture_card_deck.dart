@@ -66,8 +66,9 @@ class GestureCardDeckState extends State<GestureCardDeck>
       showData.removeAt(0);
       i++;
     });
-    if (data.length >= 5 + i) {
-      var j = data[4 + i];
+    if (showData.length != 0) if (data.length >=
+        5 + data.indexOf(showData[0])) {
+      var j = data[4 + data.indexOf(showData[0])];
       showData.add(j);
     }
   }
@@ -78,8 +79,9 @@ class GestureCardDeckState extends State<GestureCardDeck>
       showData.removeAt(0);
       i++;
     });
-    if (data.length >= 5 + i) {
-      var j = data[4 + i];
+    if (showData.length != 0) if (data.length >=
+        5 + data.indexOf(showData[0])) {
+      var j = data[4 + data.indexOf(showData[0])];
       showData.add(j);
     }
   }

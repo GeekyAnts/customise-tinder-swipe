@@ -3,10 +3,6 @@ import 'package:animation_exp/SwipeAnimation/gesture_card_deck.dart';
 import 'package:flutter/material.dart';
 
 class Example3 extends StatelessWidget {
-  final Widget child;
-
-  Example3({Key key, this.child}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return new GestureCardDeck(
