@@ -10,7 +10,7 @@ Freely Movable,Swipable Cards with fully customizable UI and left and right and 
 # Call Backs
   - onSwipeLeft - Returns index of card in list.
   - onSwipeRight - Returns index of card in list.
-  - onTap - Returns index of card in list.
+  - onCardTap - Returns index of card in list.
 
 ### Installation
 ```sh
