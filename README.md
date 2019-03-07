@@ -7,6 +7,8 @@ Freely Movable,Swipable Cards with fully customizable UI and left and right and 
 ![Demo](https://github.com/rajajain08/readme_data/blob/master/swipe_cards_flutter/2.gif)
 ![Demo](https://github.com/rajajain08/readme_data/blob/master/swipe_cards_flutter/3.gif)
 
+##### Checkout Examples  [here](https://github.com/rajajain08/swipe_cards_flutter/tree/master/animation_exp/lib/Examples)
+
 # Call Backs
   - onSwipeLeft - Returns index of card in list.
   - onSwipeRight - Returns index of card in list.
