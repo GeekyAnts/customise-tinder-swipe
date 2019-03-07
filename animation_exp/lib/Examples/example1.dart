@@ -15,23 +15,25 @@ class Example1 extends StatelessWidget {
         height: 50,
         width: 150,
         decoration: BoxDecoration(
-            color: Colors.red,
+            color: Color.fromRGBO(61, 135, 160, 1),
             borderRadius: BorderRadius.all(
               Radius.circular(8),
             )),
-        child:
-            Center(child: Text("NOPE", style: TextStyle(color: Colors.white))),
+        child: Center(
+            child: Text("NOPE",
+                style: TextStyle(color: Colors.white, fontSize: 16))),
       ),
       rightSwipeButton: Container(
         height: 50,
         width: 150,
         decoration: BoxDecoration(
-            color: Colors.green,
+            color: Color.fromRGBO(95, 169, 194, 1),
             borderRadius: BorderRadius.all(
               Radius.circular(8),
             )),
-        child:
-            Center(child: Text("YEAH", style: TextStyle(color: Colors.white))),
+        child: Center(
+            child: Text("YEAH",
+                style: TextStyle(color: Colors.white, fontSize: 16))),
       ),
       onSwipeLeft: (index) {
         print("on swipe left");

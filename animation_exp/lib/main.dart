@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
+      backgroundColor: Color.fromRGBO(216, 245, 255, 1),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
